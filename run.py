@@ -68,6 +68,12 @@ while True:
                     gc.produce_robot(unit.id, bc.UnitType.Knight)
                     print('produced a knight!')
                     continue
+            if unit.unit_type == bc.UnitType.Rocket:
+                if gc.can_launch_rocket(unit.id, bc.MapLocation(bc.Planet.Mars,1,1)):
+                    print ("launched a rocket")
+                    gc.launch_rocket(unit.id, bc.MapLocation(bc.Planet.Mars,1,1))
+
+
 
             # first, let's look for nearby blueprints to work on
             location = unit.location
